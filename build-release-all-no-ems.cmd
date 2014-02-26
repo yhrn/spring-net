@@ -4,7 +4,7 @@
 @echo ...
 @echo Running full Build Script, capturing output to buildlog.txt file...
 @echo Start Time: %time%
-build-support\tools\nant\bin\nant package-nuget -f:spring.build -D:build-ems=false -D:package.version=2.0.0 -D:nuget.version.suffix=M2-2 > buildlog.txt
+build-support\tools\nant\bin\nant clean package -f:spring.build -D:test.full=false -D:test.withcoverage=false -D:project.build.sign=false -D:build-ems=false -D:package.version=2.0.0 > buildlog.txt
 @echo .
 @echo ..
 @echo ...
@@ -17,7 +17,6 @@ start "ignored but required placeholder window title argument" buildlog.txt
 @echo Build Complete!
 @echo ************************
 @echo End Time: %time%
-@echo    
 
 
 
